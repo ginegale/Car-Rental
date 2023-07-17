@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/fontawesome/css/all.css" />
+    <title>Cars</title>
+    <style>
+      @font-face {
+        font-family: "DMSans";
+        src: url(static/font/DMSans-Regular.ttf);
+      }
+      *,
+      *::before,
+      *::after {
+        transition: all 0.5s ease 0s;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        font-family: "DMSans";
+      }
+      nav {
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        overflow: auto;
+      }
+      nav > ul {
+        list-style-type: none;
+        margin: 0px 40px 0px 0px;
+        float: right;
+      }
+      nav > ul > li {
+        padding: 10px;
+        display: inline-block;
+      }
+      nav > ul > li:hover {
+        background-color: brown;
+      }
+      nav > ul > li > a {
+        color: white;
+        text-decoration: none;
+      }
+      /* header start */
+      header {
+        min-height: 600px;
+        background-repeat: no-repeat;
+        background-size: 100% 600px;
+        background-image: url(static/image/alfa-romeo-g969ccdad9_1280.jpg);
+      }
+      .rent_now {
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 1px solid black;
+        text-align: center;
+        padding: 30px;
+        color: white;
+        width: 500px;
+        left: 50%;
+        top: 50%;
+        border-radius: 25px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      .rent_now > button {
+        background-color: yellowgreen;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;
+        box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.7);
+      }
+      .rent_now > button:hover {
+        background-color: yellow;
+        color: black;
+        box-shadow: 0px 0px 20px rgba(255, 0, 0, 1);
+      }
+      /* header end */
+      /* company_history start */
+      .company_history {
+        margin-top: 100px;
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+      }
+      .company_history > div {
+        float: left;
+        width: 50%;
+        min-width: 300px;
+        position: relative;
+      }
+      @media screen and (max-width: 600px) {
+        .company_history {
+          flex-direction: column;
+          overflow: auto;
+          height: auto;
+        }
+        .company_history > div {
+          width: 100%;
+          float: none;
+        }
+      }
+      .company_history > .left {
+        background-color: darkcyan;
+        overflow: hidden;
+      }
+      .company_history > .left > img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        position: relative;
+        display: block;
+      }
+      .company_history > .right {
+        height: 300px;
+        text-align: center;
+        background-color: khaki;
+        padding: 30px;
+        box-sizing: border-box;
+      }
+      .company_history > .left > .overlay {
+        background-color: darkgoldenrod;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        opacity: 0;
+        transition: 1s ease;
+      }
+      .company_history > .left:hover .overlay {
+        opacity: 0.9;
+      }
+      .company_history .txt {
+        position: absolute;
+        text-align: center;
+        font-size: 1.2em;
+        color: white;
+        font-style: oblique;
+        left: 50%;
+        top: 50%;
+        width: 80%;
+        min-height: 50px;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+      }
+      .company_history button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;
+        background: linear-gradient(to left, yellowgreen 33%, red 66%);
+        background-size: 300% 100%;
+        background-position: right bottom;
+        cursor: pointer;
+        transition: all ease 0.3s;
+      }
+      .company_history button:hover {
+        background-position: left bottom;
+      }
+      /* company_history end */
+      .highlight {
+        color: orangered;
+      }
+      /* feature start */
+      .feature {
+        overflow: visible;
+        margin-top: 100px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: 430px;
+        box-sizing: border-box;
+        display: flex;
+      }
+      .feature > .feature_item {
+        z-index: 10;
+        position: relative;
+        height: 330px;
+        width: 28%;
+        background-color: rgb(100, 80, 80);
+        text-align: center;
+        color: white;
+        padding: 30px;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .feature > .feature_item:hover {
+        background-color: black;
+      }
+      .feature > .darker {
+        width: 44%;
+        background-color: rgb(200, 50, 50);
+        height: 400px;
+        top: -35px;
+        box-shadow: 5px 10px 18px black;
+      }
+      @media screen and (max-width: 600px) {
+        .rent_now {
+          width: 80%;
+        }
+        .feature {
+          flex-direction: column;
+          height: auto;
+        }
+        .feature > .feature_item {
+          height: auto;
+          width: 100%;
+        }
+        .feature > .darker {
+          height: auto;
+          top: 0px;
+        }
+      }
+      /* feature end */
+      /* about start */
+      .about {
+        margin-top: 100px;
+        display: block;
+        position: relative;
+        min-height: 500px;
+        background-repeat: no-repeat;
+        background-size: 100% 600px;
+        background-position: center;
+
+        -webkit-filter: grayscale(80%);
+        -moz-filter: grayscale(80%);
+        -ms-filter: grayscale(80%);
+        filter: grayscale(80%);
+
+        border: 1px solid black;
+        transition: all ease 0.3s;
+        background-image: url(static/image/plymouth-g97bd6350b_1280.jpg);
+      }
+      .about:hover {
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+        filter: grayscale(0%);
+        transition: all ease 0.3s;
+        background-size: 120% 720px;
+        color: white;
+      }
+      .about > div {
+        text-align: center;
+        height: 80px;
+        overflow: hidden;
+        margin: 10px;
+        min-width: 180px;
+        width: 50%;
+        border: none;
+        border-radius: 40px;
+        padding: 14px;
+        box-sizing: border-box;
+        background: linear-gradient(to left, yellowgreen 33%, red 66%);
+        background-size: 300% 100%;
+        background-position: right bottom;
+        transition: all ease 0.3s;
+        cursor: pointer;
+      }
+      .about > div > h4 {
+        padding: 0px;
+        margin: 0px;
+      }
+      .about > div > p {
+        padding: 3px;
+        margin: 3px;
+      }
+      .about > .step_01 {
+        margin-top: 30px;
+        margin-left: 5%;
+      }
+      .about > .step_02 {
+        margin-left: 15%;
+      }
+      .about > .step_03 {
+        margin-left: 25%;
+      }
+      .about > .step_04 {
+        margin-left: 35%;
+      }
+      .about > .step_05 {
+        margin-left: 45%;
+      }
+      .about > .step_01:hover,
+      .about > .step_02:hover,
+      .about > .step_03:hover,
+      .about > .step_04:hover,
+      .about > .step_05:hover {
+        background-position: left bottom;
+      }
+      /* about end */
+      /* footer start */
+      footer{
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding-top: 10px;
+        overflow: auto;
+        font-size: 0.8em;
+      }
+      /* footer end */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="about_us.html">ABOUT</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+    <header>
+      <div class="rent_now">
+        <h1>CAR RENTAL</h1>
+        <button>RENT</button>
+      </div>
+    </header>
+    <section class="company_history">
+      <div class="left">
+        <img src="static/image/car-gc5dcee9b1_1280.jpg" alt="company history" />
+        <div class="overlay">
+          <div class="txt">
+            <h2>Bring You Unique Car Driving Experiences</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <button onclick="alert('HELLO')">Contact Sale Manager</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <p><i class="fa-solid fa-building" style="font-size: 48px"></i></p>
+        <h1>COMPANY <span class="highlight">HISTORY</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae vel,
+          sed, ut officia rem dolore sequi quia, dolorem expedita repellat
+          provident animi nisi voluptates error. Ratione nemo consequuntur animi
+          accusamus?
+        </p>
+      </div>
+    </section>
+    <section class="feature">
+      <div class="feature_item">
+        <p><i class="fa-solid fa-handshake-angle" style="font-size: 48px"></i></p>
+        <h2>24/7 CUSTOMER SERVICE</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
+          nesciunt est temporibus excepturi dolorem! Consectetur corrupti.
+        </p>
+      </div>
+      <div class="feature_item darker">
+        <p><i class="fa-solid fa-car" style="font-size: 48px"></i></p>
+        <h2>DIVERSITY</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+          pariatur, impedit quisquam nulla qui aliquam saepe dicta dolorem
+          beatae alias quod veritatis commodi. Minima error deleniti aut
+          corporis explicabo facilis.
+        </p>
+      </div>
+      <div class="feature_item">
+        <p><i class="fa-solid fa-dollar-sign" style="font-size: 48px"></i></p>
+        <h2>LOW RENTAL RATE</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius
+          harum sequi, id magnam odit ipsam earum et.
+        </p>
+      </div>
+    </section>
+    <div style="clear: both; top: 70px; height: 10px"></div>
+    <section class="about">
+      <div class="step_01">
+        <h4>Step 1</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="step_02">
+        <h4>Step 2</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="step_03">
+        <h4>Step 3</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="step_04">
+        <h4>Step 4</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="step_05">
+        <h4>Step 5</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </section>
+    <section class="contact"></section>
+    <footer>
+      <h4>Copyright © 2023 carrentals.com. All rights reserved</h4>
+      <p><i class="fa-solid fa-phone"></i> 0879512121</p>
+      <p><i class="fa-solid fa-envelope"></i> carrentals@gmail.com</p>
+      <p style="font-size: 2em"><i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-paypal"></i> <i class="fa-brands fa-cc-jcb"></i></p>
+    </footer>
+  </body>
+</html>

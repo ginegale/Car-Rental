@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/fontawesome/css/all.css" />
+    <title>About Us</title>
+    <style>
+      @font-face {
+        font-family: "DMSans";
+        src: url(static/font/DMSans-Regular.ttf);
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        font-family: "DMSans";
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .menu {
+        background-color: black;
+        height: 50px;
+      }
+      .footer {
+        background-color: black;
+        height: 150px;
+      }
+      .content {
+        background-color: rgba(39, 137, 165, 1);
+        height: 570px;
+        overflow: hidden;
+      }
+      .big_icon {
+        font-size: 3.5em;
+      }
+      .text_center {
+        text-align: center;
+      }
+      .row {
+        background-color: rgba(39, 137, 165, 1);
+        height: 450px;
+        width: 120%;
+        border: 1px solid rgba(39, 137, 165, 1);
+        overflow: hidden;
+        transform: translate(-10vw, 10vh) rotate(-5deg);
+        transition: all 0.5s ease;
+      }
+      .row > div {
+        color: white;
+        padding: 30px;
+        padding-top: 230px;
+        box-sizing: border-box;
+        font-size: 1.2em;
+        height: 700px;
+        width: 30vw;
+        margin-left: 2.2vw;
+        display: inline-block;
+        position: absolute;
+        transition: all 0.5s ease;
+      }
+      .row > div:hover {
+        background-color: rgba(255, 0, 0, 1);
+        background-image: radial-gradient(
+          rgba(255, 0, 0, 1) 0%,
+          rgba(255, 255, 0, 1) 150%
+        );
+        transition: all 0.5s ease;
+      }
+      .row > div > h2 {
+        text-align: center;
+      }
+      .row > .column_1 {
+        background-image: radial-gradient(
+          rgba(66, 111, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 250%
+        );
+        transform: translateX(10vw) translateY(-200px) rotate(5deg);
+        left: 0vw;
+      }
+      .row > .column_2 {
+        background-color: rgba(255, 81, 53, 1);
+        transform: translateX(10vw) translateY(-200px) rotate(5deg);
+        left: 33.333333vw;
+      }
+      .row > .column_3 {
+        background-color: rgba(1, 59, 75, 1);
+        transform: translateX(10vw) translateY(-200px) rotate(5deg);
+        left: 66.666666vw;
+      }
+      @media screen and (max-width: 900px) {
+        .row > div {
+          font-size: 1em;
+        }
+        .big_icon {
+          font-size: 3.5em;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .row > div {
+          font-size: 1em;
+          padding: 220px 15px 15px;
+        }
+        .big_icon {
+          font-size: 2.5em;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .content {
+          height: auto;
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+        .big_icon {
+          font-size: 2.5em;
+        }
+        .row {
+          height: auto;
+          width: 100%;
+          overflow: auto;
+          transform: translate(0vw, 0vh) rotate(0deg);
+        }
+        .row > div {
+          padding-top: 30px;
+          font-size: 1.2em;
+          height: auto;
+          width: 90vw;
+          margin-left: 3vw;
+          display: block;
+          position: relative;
+        }
+        .row > .column_1,
+        .row > .column_2,
+        .row > .column_3 {
+          transform: translateX(0vw) translateY(0px) rotate(0deg);
+          left: 0vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu"></div>
+    <div class="content">
+      <div class="row">
+        <div class="column_1">
+          <p class="text_center">
+            <i class="fa-solid fa-truck-fast big_icon"></i>
+          </p>
+          <h2>Flexible Rentals</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit alias
+            ducimus aspernatur, eligendi voluptates non labore fugit dolor
+            aliquid architecto.
+          </p>
+        </div>
+        <div class="column_2">
+          <p class="text_center"><i class="fa-solid fa-coins big_icon"></i></p>
+          <h2>Free Extras & Cancellation</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quae
+            asperiores porro aperiam aspernatur, explicabo nobis molestiae
+            accusantium numquam fugiat.
+          </p>
+        </div>
+        <div class="column_3">
+          <p class="text_center">
+            <i class="fa-solid fa-handshake big_icon"></i>
+          </p>
+          <h2>Quality & Expertise</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+            maiores eos odit doloribus vitae deleniti in nemo molestias
+            necessitatibus enim!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
